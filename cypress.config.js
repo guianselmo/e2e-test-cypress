@@ -9,6 +9,10 @@ module.exports = defineConfig({
     video: true,
     env: {
       viewportWidthBreakpoint: 768,
+      setupNodeEvents(on, config) {
+        require('@cypress/grep/src/plugin')(config)
+        return config
+      },
     }
   },
 });
